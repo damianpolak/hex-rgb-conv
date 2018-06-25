@@ -1,0 +1,44 @@
+{
+  "name": "hex-rgb-conv",
+  "version": "1.0.0",
+  "description": "Convert 6 digits and 3 digits hex color codes to RGB values.",
+  "main": "index.js",
+  "scripts": {
+    "test": "ava"
+  },
+  "devDependencies": {
+    "ava": "^1.0.0-beta.6"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/damianpolak/hex-rgb-conv.git"
+  },
+  "keywords": [
+    "rgb",
+    "rgba",
+    "hextorgb",
+    "hex-rgb-conv",
+    "hex",
+    "short",
+    "shorthand",
+    "3digits",
+    "shortcut",
+    "convert",
+    "conversion",
+    "converter",
+    "color",
+    "html",
+    "css",
+    "code",
+    "hex2rgb"
+  ],
+  "author": {
+    "name": "Damian Polak",
+    "email": "deeppurple044@gmail.com"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/damianpolak/hex-rgb-conv/issues"
+  },
+  "homepage": "https://github.com/damianpolak/hex-rgb-conv#readme"
+}
