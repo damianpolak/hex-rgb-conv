@@ -65,18 +65,3 @@ module.exports = hexRgbConv = (hex, array) => {
    }
   }
 };
-
-console.log(hexRgbConv('#0DC4DE'));
-console.log(hexRgbConv('#FFCCDD'));
-console.log(hexRgbConv('#E45120'));
-
-
-
- console.log(hexRgbConv('#DFA'));
- console.log(hexRgbConv('#C1F'));
- console.log(hexRgbConv('#172'));
-
-  console.log(hexRgbConv('#C56', true));
-  console.log(hexRgbConv('#123', true));
-  console.log(hexRgbConv('#172DF2', true));
-  console.log(hexRgbConv('#E5F3C8', true));
