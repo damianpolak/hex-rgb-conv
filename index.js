@@ -17,50 +17,66 @@
 // array param | type boolean: true or false for return value in array or object
 
 module.exports = hexRgbConv = (hex, array) => {
-'use strict';
-   hex = hex.toString(16);
-   let hexCheck = (val) => {
-     return (/^[0-9a-fA-F]+$/).test(val);
+  'use strict';
+
+  let hexCheck = (val) => {
+  return (/^[0-9a-fA-F]+$/).test(val);
+  }
+
+  const message = 'Expected correct hex value in three or six digit notation';
+
+  hex = hex.toString(16);
+
+  if(hex === undefined) {
+   throw new TypeError(message);
+  } else {
+   if(hex[0] === '#') {
+     var hex = hex.slice(1, hex.length);
    }
 
-   if(hex === undefined) {
-     throw new TypeError('Expected correct hex value in three or six digit notation');
+   if(parseInt(hex, 16) < 0xFFFFFF && hexCheck(hex) === true) {
+     switch(hex.length) {
+       // Turns 3 digits notation hex code to RGB values.
+       // IMPORTANT! This is a rounded number that never will
+       // be the same as for a 6 digits conversion
+       case 3:
+        var red = parseInt(parseInt(hex[0], 16) * 17, 10);
+        var green = parseInt(parseInt(hex[1], 16) * 17, 10);
+        var blue = parseInt(parseInt(hex[2], 16) * 17, 10);
+       break;
+
+       // Turns 6 digits notation hex code to RGB values.
+       case 6:
+        var red = parseInt(parseInt(hex[0]+hex[1], 16), 10);
+        var green = parseInt(parseInt(hex[2]+hex[3], 16), 10);
+        var blue = parseInt(parseInt(hex[4]+hex[5], 16), 10);
+       break;
+
+       default:
+        throw new TypeError(message);
+     }
+
+     return array === true ?
+   		[red, green, blue] :
+   		{red, green, blue};
+
    } else {
-     if(hex[0] === '#') {
-       var hex = hex.slice(1, hex.length);
-     }
-
-     if(parseInt(hex, 16) < 0xFFFFFF && hexCheck(hex) == true) {
-       switch(hex.length) {
-         // Turns 3 digits notation hex code to RGB values.
-         // IMPORTANT! This is a rounded number that never will
-         // be the same as for a 6 digits conversion
-         case 3:
-           var red = parseInt(parseInt(hex[0], 16) * 17, 10);
-           var green = parseInt(parseInt(hex[1], 16) * 17, 10);
-           var blue = parseInt(parseInt(hex[2], 16) * 17, 10)
-
-         break;
-
-         // Turns 6 digits notation hex code to RGB values.
-         case 6:
-            var red = parseInt(parseInt(hex[0]+hex[1], 16), 10);
-            var green = parseInt(parseInt(hex[2]+hex[3], 16), 10);
-            var blue = parseInt(parseInt(hex[4]+hex[5], 16), 10);
-         break;
-
-         default:
-            throw new TypeError('Expected correct hex value in three or six digit notation');
-       }
-
-       return array === true ?
-     		[red, green, blue] :
-     		{red, green, blue};
-
-     } else {
-       throw new TypeError('Expected correct hex value in three or six digit notation');
-     }
+      throw new TypeError(message);
    }
- };
+  }
+};
 
-console.log(hexRgbConv('CFC'));
+console.log(hexRgbConv('#0DC4DE'));
+console.log(hexRgbConv('#FFCCDD'));
+console.log(hexRgbConv('#E45120'));
+
+
+
+ console.log(hexRgbConv('#DFA'));
+ console.log(hexRgbConv('#C1F'));
+ console.log(hexRgbConv('#172'));
+
+  console.log(hexRgbConv('#C56', true));
+  console.log(hexRgbConv('#123', true));
+  console.log(hexRgbConv('#172DF2', true));
+  console.log(hexRgbConv('#E5F3C8', true));
