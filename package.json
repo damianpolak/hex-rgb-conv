@@ -1,7 +1,7 @@
 {
   "name": "hex-rgb-conv",
   "version": "1.1.0",
-  "description": "Convert 6 digits and 3 digits hex color codes to RGB values. Returns object and arrays;",
+  "description": "Convert 6 digits and 3 digits hex color codes to RGB values. Returns object and arrays.",
   "main": "index.js",
   "scripts": {
     "test": "ava"
