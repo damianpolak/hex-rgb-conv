@@ -1,6 +1,6 @@
 {
   "name": "hex-rgb-conv",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Convert 6 digits and 3 digits hex color codes to RGB values.",
   "main": "index.js",
   "scripts": {
