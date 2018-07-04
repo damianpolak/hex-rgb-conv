@@ -1,6 +1,6 @@
-# hex-rgb-conv [![Build Status](https://travis-ci.org/damianpolak/rgb-hex-conv.svg?branch=master)](https://travis-ci.org/damianpolak/rgb-hex-conv)
+# hex-rgb-conv [![Build Status](https://travis-ci.org/damianpolak/hex-rgb-conv.svg?branch=master)](https://travis-ci.org/damianpolak/hex-rgb-conv)
 
-> Convert 6 digits and 3 digits hex color codes to RGB values in objects or array
+> Convert 6 digits and 3 digits hex color codes to RGB values. Returns object and arrays.
 
 ## Install
 
