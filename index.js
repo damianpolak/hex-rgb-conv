@@ -34,7 +34,7 @@ module.exports = hexRgbConv = (hex, array) => {
      var hex = hex.slice(1, hex.length);
    }
 
-   if(parseInt(hex, 16) < 0xFFFFFF && hexCheck(hex) === true) {
+   if(parseInt(hex, 16) <= 0xFFFFFF && hexCheck(hex) === true) {
      switch(hex.length) {
        // Turns 3 digits notation hex code to RGB values.
        // IMPORTANT! This is a rounded number that never will

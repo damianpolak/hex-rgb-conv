@@ -39,6 +39,7 @@ test('Converting hex code to RGB - object // 6 digit', t => {
 
   t.deepEqual(m('0F2F4F'), { red: 15, green: 47, blue: 79 });
 	t.deepEqual(m('2C4C6B'), { red: 44, green: 76, blue: 107 });
+	t.deepEqual(m('FFFFFF'), { red: 255, green: 255, blue: 255 });
 
   //t.deepEqual(m(0x0D8F5A), { red: 13, green: 143, blue: 90 });
 	t.deepEqual(m(0x56EEFF), { red: 86, green: 238, blue: 255 });
